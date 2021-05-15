@@ -1,0 +1,5 @@
+/textbook_pdfs/
+/textbooks/
+*.pdf
+*.png
+*.jpg

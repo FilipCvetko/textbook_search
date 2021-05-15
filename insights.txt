@@ -1,0 +1,9 @@
+EXTRACTING DATA:
+    - pyPDF2 will be needed to crop the pages with correct answers (final output)
+    - pdfminer.six will efficiently parse the text (keyword search + any other processing)
+
+DISPLAYING DATA:
+    - PySimpleGui will do for MVP version.
+
+ITERATIONS:
+    - User data will gather onto the production server which will assist in further training the model.
