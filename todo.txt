@@ -1,0 +1,6 @@
+1. Add a folder browse directory where all textbooks will be stored.
+2. Add a toggle for all textbooks.
+3. Fix NO button (should be continue)
+4. Fix Yes button to send data about the request to the server - data gathering.
+5. Create more dynamic images.
+6. Add view whole page option (when a user clicks that, allow him to go backwards and forwards through pages)

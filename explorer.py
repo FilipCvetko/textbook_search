@@ -1,23 +1,23 @@
 from pathlib import Path
-import PyPDF2
+import fitz
 
-file = 'textbook_pdfs/robbins.pdf'
+file = 'textbook_pdfs/Boron_fiziologija.pdf'
 
-reader = PyPDF2.PdfFileReader(file)
-out = reader.getPage(300)
-
-out.mediaBox.lowerLeft = (150, 150)
-out.mediaBox.upperRight = (400, 400)
-
-from pdfminer.high_level import extract_text
-
-text = extract_text(file, page_numbers=[300])
-print(text)
-
-
-
-writer = PyPDF2.PdfFileWriter()
-writer.addPage(out)
-
-with open("haha.pdf", "wb") as file:
-    writer.write(file)
+def search(text, file=file):
+    doc = fitz.open(file)
+    for i, page in enumerate(doc):
+        text_instances = page.searchFor(text)
+        print(i)
+        for inst in text_instances:
+            highlight = page.add_highlight_annot(inst).rect
+            highlight[0] -= 10000
+            highlight[1] -= 150
+            highlight[2] += 10000
+            highlight[3] += 150
+            print(highlight)
+            # zoom = 2
+            # mat = fitz.Matrix(zoom, zoom)
+            pix = page.get_pixmap(clip=highlight)
+            filename =f"{i}.png"
+            pix.save(filename)
+            yield filename

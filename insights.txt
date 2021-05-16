@@ -1,6 +1,5 @@
 EXTRACTING DATA:
-    - pyPDF2 will be needed to crop the pages with correct answers (final output)
-    - pdfminer.six will efficiently parse the text (keyword search + any other processing)
+    - pymupdf will do!
 
 DISPLAYING DATA:
     - PySimpleGui will do for MVP version.
