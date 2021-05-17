@@ -1,5 +1,6 @@
 /textbook_pdfs/
 /textbooks/
+/imgs/
 *.pdf
 *.png
 *.jpg
