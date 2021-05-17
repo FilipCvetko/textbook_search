@@ -2,6 +2,14 @@ from pathlib import Path
 import fitz
 import os
 from config import *
+import shutil
+
+def clear_cache():
+    shutil.rmtree(image_folder)
+
+def create_cache():
+    if not os.path.isdir(image_folder):
+        os.mkdir(image_folder)
 
 def search(text, file):
     doc = fitz.open(file)

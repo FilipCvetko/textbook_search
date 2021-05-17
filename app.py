@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
 import os
-from explorer import search
+from explorer import search, create_cache, clear_cache
 from config import *
 
 img_size = (1000, 600)
@@ -27,11 +27,13 @@ layout = [
 ]
 
 window = sg.Window(title="Textbook search", layout=layout, resizable=True)
+create_cache()
 
 while True:
     event, values = window.read()
 
     if event == "OK" or event == sg.WIN_CLOSED:
+        clear_cache()
         break
 
     if event == "-FOLDER-":
